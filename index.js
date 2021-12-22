@@ -242,6 +242,8 @@ cleartask.onclick=function(e)
 {
     var main=document.getElementById("main_tasks");
     var inputcontainer=main.querySelectorAll("input");
+    var remains=0;
+    var taskremains=document.getElementsbyClassName("task-count")[0];
     
     for(var i=0;i<inputcontainer.length;i++)
     {
@@ -249,9 +251,14 @@ cleartask.onclick=function(e)
         {
             var parent=inputcontainer[i].parentNode;
             parent.parentNode.removeChild(parent);
-            count--;
+        }
+        else
+        {
+            remains++;
         }
     }
+    
+    taskremains.html=remains+" task remaining";
 }
 
 var checkbox=setInterval(function(){
