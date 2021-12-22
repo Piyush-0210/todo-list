@@ -242,9 +242,9 @@ cleartask.onclick=function(e)
 {
     var main=document.getElementById("main_tasks");
     var inputcontainer=main.querySelectorAll("input");
+    var task_remains=document.getElementsByClassName("task-count")[0];
     var remains=0;
-    var taskremains=document.getElementsbyClassName("task-count")[0];
-    
+
     for(var i=0;i<inputcontainer.length;i++)
     {
         if(inputcontainer[i].checked==true)
@@ -253,12 +253,11 @@ cleartask.onclick=function(e)
             parent.parentNode.removeChild(parent);
         }
         else
-        {
-            remains++;
-        }
+        remains++;
     }
-    
-    taskremains.html=remains+" task remaining";
+
+    task_remains.innerHTML=remains + " tasks remaining"
+
 }
 
 var checkbox=setInterval(function(){
