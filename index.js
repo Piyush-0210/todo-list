@@ -249,6 +249,7 @@ cleartask.onclick=function(e)
         {
             var parent=inputcontainer[i].parentNode;
             parent.parentNode.removeChild(parent);
+            count--;
         }
     }
 }
